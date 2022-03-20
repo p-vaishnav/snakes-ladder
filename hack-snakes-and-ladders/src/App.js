@@ -4,7 +4,7 @@ import Board from './components/board/Board';
 
 function App() {
   return (
-    <Board rows={10} cols={10} boardSize={60} maxPlayers={3}/>    
+    <Board rows={10} cols={10} boardSize={50} maxPlayers={2}/>    
   );
 }
 
