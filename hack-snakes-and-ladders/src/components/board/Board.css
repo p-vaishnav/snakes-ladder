@@ -1,0 +1,19 @@
+.board {
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+button {
+    position: absolute;
+}
+
+#_switch  {
+    position: absolute;
+    top: 800px
+}
+
+#_w {
+    position: absolute;
+    top: 900px
+}
