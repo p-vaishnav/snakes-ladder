@@ -2,7 +2,7 @@
 export const ladders = [/*{
     start: 1,
     end: 100
-  }*/,{
+  },*/{
     start: 2,
     end: 50
   },{

@@ -11,9 +11,9 @@ import { ladders } from "../../utils/ladders";
 import Canvas from "../canvas/Canvas";
 import Square from "../square/Square";
 import "./Board.css";
-const Board = function ({ rows, cols, boardSize, maxPlayers }) {
+const Board = function ({ rows, cols, boardSize, maxPlayers , playerNo , setPlayerNo ,setNumPlayers }) {
   // const [isBlack, setIsBlack] = useState(false);
-  const [playerNo, setPlayerNo] = useState(0);
+  
   const [playerPositions, setPlayerPositions] = useState({
     0: 1,
     1: 1,
@@ -39,7 +39,7 @@ const Board = function ({ rows, cols, boardSize, maxPlayers }) {
     }
     board.push(row);
   }
-
+ 
   const rollDevice = () => {
     if (!isNaN(hasWon)) {
       return;
@@ -76,6 +76,7 @@ const Board = function ({ rows, cols, boardSize, maxPlayers }) {
   const _switch = (playerNo) => {
     switch (playerNo) {
       case 0:
+
         return <div id="_switch">Turn for Player 1</div>;
       case 1:
         return <div id="_switch">Turn for Player 2</div>;
@@ -135,9 +136,45 @@ const Board = function ({ rows, cols, boardSize, maxPlayers }) {
           })
         )}
       </div>
-      {/* <Canvas board={board} boardSizeConst={boardSize}></Canvas> */}
       {/* Sam */}
-      <button className="btn" onClick={rollDevice}>
+      <section class="container">
+  <div id="cube">
+    <div class="front">
+      <span class="dot dot1"></span>
+    </div>
+    <div class="back">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>
+    </div>
+    <div class="right">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+    </div>
+    <div class="left">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+    </div>
+    <div class="top">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+      <span class="dot dot5"></span>
+    </div>
+    <div class="bottom">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+      <span class="dot dot5"></span>
+      <span class="dot dot6"></span>
+    </div>
+  </div>
+</section>
+      <button className="btn flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0" onClick={rollDevice}>
         Roll Dice!
       </button>
       {<h1>{_roll}</h1>}
@@ -145,6 +182,12 @@ const Board = function ({ rows, cols, boardSize, maxPlayers }) {
       {_switch(playerNo)}
       {/* Sam */}
       {won(hasWon)}
+      <button
+      className="flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0"
+            onClick={() => setNumPlayers(null)}
+          >
+            LEAVE GAME
+          </button>
     </>
   );
 };
