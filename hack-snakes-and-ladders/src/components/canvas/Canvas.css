@@ -1,4 +1,19 @@
+
+body{
+    display:flex;
+    justify-content:space-around;
+
+}
+
+
 .canvas {
     position: absolute;
-    top: 0;
+    margin-bottom:2rem;
+    
+  
+    
+}
+
+.square{
+    background-color:#808080;
 }
