@@ -20,7 +20,7 @@ const Canvas = function({board, boardSizeConst}) {
         const sizeRatio = 1;
         ctx.moveTo(startPos.x + 25,startPos.y + 25);
         ctx.lineTo(endPos.x + 25,endPos.y + 25 );
- 
+      
         ctx.lineWidth = 15;
         ctx.strokeStyle = color;
         ctx.stroke();

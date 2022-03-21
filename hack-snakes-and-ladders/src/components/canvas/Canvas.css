@@ -2,6 +2,7 @@
 body{
     display:flex;
     justify-content:space-around;
+    background-color: #9fc4a9;
 
 }
 
@@ -15,5 +16,5 @@ body{
 }
 
 .square{
-    background-color:#808080;
+    background-color:#eee;
 }
