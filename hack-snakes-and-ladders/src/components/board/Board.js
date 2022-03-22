@@ -8,6 +8,8 @@ then canvas should be done with red and green lines -> waiting start working on 
 
 import React, { useState } from "react";
 import { ladders } from "../../utils/ladders";
+import l1 from "../../images/l1.png";
+import s2  from "../../images/s2.png";
 import Canvas from "../canvas/Canvas";
 import Square from "../square/Square";
 import "./Board.css";
@@ -22,6 +24,7 @@ const Board = function ({ rows, cols, boardSize, maxPlayers , playerNo , setPlay
   });
   const [hasWon, setHasWon] = useState(NaN);
   const [_roll, setRoll] = useState(0);
+  const [pos , setPosition] = useState(0);
   let isBlack = false;
   const board = [];
   let position = rows * cols;
@@ -111,6 +114,7 @@ const Board = function ({ rows, cols, boardSize, maxPlayers , playerNo , setPlay
       >
         {board.map((row) =>
           row.map((square) => {
+            
             let isMarked = false;
             let playerNo = 0;
             let index = 0;
@@ -131,11 +135,19 @@ const Board = function ({ rows, cols, boardSize, maxPlayers , playerNo , setPlay
                 isMarked={isMarked}
                 playerNo={playerNo}
                 position={square.position}
+                pos={pos}
+                setPosition={setPosition}
               />
             );
           })
         )}
+        <img src={l1} alt="" className="c-l1" />
+        <img src={l1} alt="" className="c-l2" />
+        <img src={l1} alt="" className="c-l3" />
+        <img src={s2} alt="" className="c-s1" />
+        <img src={s2} alt="" className="c-s2" />
       </div>
+      
       {/* Sam */}
       <section class="container">
   <div id="cube">
@@ -174,13 +186,11 @@ const Board = function ({ rows, cols, boardSize, maxPlayers , playerNo , setPlay
     </div>
   </div>
 </section>
-      <button className="btn flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0" onClick={rollDevice}>
+      {!hasWon && <button className="btn flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0" onClick={rollDevice}>
         Roll Dice!
-      </button>
+      </button>}
       {<h1>{_roll}</h1>}
-      {/* Sam  */}
       {_switch(playerNo)}
-      {/* Sam */}
       {won(hasWon)}
       <button
       className="flex-shrink-0 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0"

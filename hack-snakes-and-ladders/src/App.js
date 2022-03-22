@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Welcome to Snake and Ladders</h1>
+        <h1 className="wel">Welcome to Snake and Ladders</h1>
         {numPlayers && <h2>Player Turn {playerNo + 1}</h2>}
       </header>
       {!numPlayers && (
